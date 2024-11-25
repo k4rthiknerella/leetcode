@@ -13,25 +13,26 @@ import java.util.Map;
  * @param nums   An array of integers representing the numbers.
  * @param target The target sum we are trying to find.
  * @return An array of two integers representing the indices of the numbers that sum up to the target.
- *         Returns an empty array if no solution exists.
+ * Returns an empty array if no solution exists.
  *
  * Time Complexity: O(n), where n is the number of elements in the array.
  * Space Complexity: O(n), due to the space required by the HashMap.
  */
 
 public class TwoSum {
-        public int[] twoSum(int[] nums, int target){
-            Map<Integer, Integer> numMap = new HashMap<>();
-            int n = nums.length;
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> numMap = new HashMap<>();
+        int n = nums.length;
 
-            for(int i = 0; i < n; i++){
-                int complement = target - nums[i];
+        for (int i = 0; i < n; i++) {
+            int complement = target - nums[i];
 
-                if(numMap.containsKey(complement)){
-                    return new int[]{numMap.get(complement), i};
-                }
-                numMap.put(nums[i], i);
+            if (numMap.containsKey(complement)) {
+                return new int[]{numMap.get(complement), i};
             }
-            return new int[]{};
+            numMap.put(nums[i], i);
         }
+        return new int[]{};
     }
+}
+
